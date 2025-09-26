@@ -15,27 +15,34 @@ void print_help() {
 
 int main(int argc, char *argv[]) {
     int verbose = 0;
+    int i;
 
-    int i = 1;
-    while (i < argc) {
+    for (i = 1; i < argc; i++) {
         if (my_strcmp(argv[i], "-v") == 0 || my_strcmp(argv[i], "--verbose") == 0) {
             verbose = 1;
-            i++;
         } else if (my_strcmp(argv[i], "-h") == 0 || my_strcmp(argv[i], "--help") == 0) {
             print_help();
             return 0;
+        } else if (argv[i][0] == '-') {
+            printf("Unknown flag: %s\n", argv[i]);
+            return 1;
         } else {
+            FILE *f = fopen(argv[i], "r");
+            if (f == NULL) {
+                printf("Error opening file %s\n", argv[i]);
+                continue;
+            }
             if (verbose) {
-                printf("Processing file: %s\n", argv[i]);
+                printf("File %s opened successfully.\n", argv[i]);
             } else {
                 printf("%s\n", argv[i]);
             }
-            i++;
+            fclose(f);
         }
     }
 
     if (verbose) {
-        printf("Verbose mode is enabled.\n");
+        printf("Verbose mode enabled.\n");
     }
 
     return 0;
