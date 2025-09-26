@@ -73,3 +73,16 @@ Overrides default configuration settings via flags.
 Displays contents of files, printing filename before each.
 
 ---
+
+## Task 6.2: Simple File Statistics
+**Purpose:**
+Analyzes one or more text files and prints the following statistics for each file:
+*Filename
+
+*Size (in bytes)
+
+*Number of lines
+
+*Number of words
+
+---
