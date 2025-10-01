@@ -1,14 +1,5 @@
 #include <stdio.h>
-
-int my_strlen(const char *s) {
-    int len = 0;
-    while (s[len] != 0) len++;
-    return len;
-}
-
-int is_whitespace(char c) {
-    return c == ' ' || c == '\n' || c == '\t' || c == '\r';
-}
+#include "mystring.h"
 
 void filestat(const char *filename) {
     FILE *fp = fopen(filename, "r");
@@ -17,9 +8,9 @@ void filestat(const char *filename) {
         return;
     }
 
-    fseek(fp, 0, 2); 
+    fseek(fp, 0, 2);
     long size = ftell(fp);
-    rewind(fp);       
+    rewind(fp);
 
     int lines = 0;
     int words = 0;
@@ -27,20 +18,12 @@ void filestat(const char *filename) {
     char prev = ' ';
 
     while ((c = fgetc(fp)) != -1) {
-        if (c == '\n') {
-            lines++;
-        }
-        if (is_whitespace(c)) {
-            if (!is_whitespace(prev)) {
-                words++;
-            }
-        }
+        if (c == '\n') lines++;
+        if (is_whitespace(c) && !is_whitespace(prev)) words++;
         prev = c;
     }
 
-    if (!is_whitespace(prev)) {
-        words++;
-    }
+    if (!is_whitespace(prev)) words++;
 
     fclose(fp);
 
@@ -56,8 +39,7 @@ int main(int argc, char *argv[]) {
         return 1;
     }
 
-    int i;
-    for (i = 1; i < argc; i++) {
+    for (int i = 1; i < argc; i++) {
         filestat(argv[i]);
     }
 
