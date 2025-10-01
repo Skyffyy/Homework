@@ -1,39 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-
-int is_valid_base(int base) {
-    return base == 2 || base == 8 || base == 10 || base == 16;
-}
-void convert_to_base(int number, int base) {
-    char buffer[65];  
-    const char *digits = "0123456789ABCDEF";
-    int is_negative = 0;
-    int i = 0;
-
-    if (number == 0) {
-        printf("0\n");
-        return;
-    }
-
-    if (number < 0 && base == 10) {
-        is_negative = 1;
-        number = -number;
-    }
-
-    while (number > 0) {
-        buffer[i++] = digits[number % base];
-        number /= base;
-    }
-
-    if (is_negative) {
-        buffer[i++] = '-';
-    }
-
-    for (int j = i - 1; j >= 0; j--) {
-        putchar(buffer[j]);
-    }
-    putchar('\n');
-}
+#include "mynumber.h"  
 
 int main(int argc, char *argv[]) {
     if (argc != 4) {

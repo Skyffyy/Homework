@@ -1,25 +1,6 @@
 #include <stdio.h>
-
-int my_atoi(const char *str) {
-    int result = 0, sign = 1;
-    if (*str == '-') { sign = -1; str++; }
-    else if (*str == '+') { str++; }
-    while (*str >= '0' && *str <= '9') {
-        result = result * 10 + (*str - '0');
-        str++;
-    }
-    return sign * result;
-}
-
-int is_number(const char *str) {
-    if (*str == '-' || *str == '+') str++;
-    if (*str == '\0') return 0;
-    while (*str) {
-        if (*str < '0' || *str > '9') return 0;
-        str++;
-    }
-    return 1;
-}
+#include "mystring.h"   
+#include "mynumber.h"   
 
 int main(int argc, char *argv[]) {
     int sum = 0, count = 0;
@@ -27,8 +8,8 @@ int main(int argc, char *argv[]) {
     int first_valid = 1;
 
     for (int i = 1; i < argc; i++) {
-        if (is_number(argv[i])) {
-            int val = my_atoi(argv[i]);
+        if (is_number(argv[i])) {        
+            int val = my_atoi(argv[i]);   
             sum += val;
             if (first_valid) {
                 min = max = val;

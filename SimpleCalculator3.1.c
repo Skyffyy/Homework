@@ -1,15 +1,5 @@
 #include <stdio.h>
-
-int my_atoi(const char *str) {
-    int result = 0, sign = 1;
-    if (*str == '-') { sign = -1; str++; }
-    else if (*str == '+') { str++; }
-    while (*str >= '0' && *str <= '9') {
-        result = result * 10 + (*str - '0');
-        str++;
-    }
-    return sign * result;
-}
+#include "mystring.h"   
 
 int main(int argc, char *argv[]) {
     if (argc != 4) {
@@ -17,7 +7,7 @@ int main(int argc, char *argv[]) {
         return 1;
     }
 
-    int num1 = my_atoi(argv[1]);
+    int num1 = my_atoi(argv[1]);   
     int num2 = my_atoi(argv[3]);
     char op = argv[2][0];
     int result;

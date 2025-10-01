@@ -1,29 +1,41 @@
 #include <stdio.h>
+#include "mystring.h"
+#include "mynumber.h"
 
-int main(int argc, char *argv[]) {
-    if (argc < 2) {
-        printf("Usage: ./display <file1> <file2> ...\n");
-        return 1;
+void filestat(const char *filename) {
+    FILE *f = fopen(filename, "r");
+    if (!f) { 
+        printf("Cannot open file: %s\n", filename); 
+        return; 
     }
 
-    int i;
-    char buffer[1024];  
+    fseek(f, 0, 2); 
+    long size = ftell(f);
+    rewind(f); 
+    int lines = 0, words = 0;
+    char c, prev = ' ';
 
-    for (i = 1; i < argc; i++) {
-        FILE *f = fopen(argv[i], "r");
-        if (f == NULL) {
-            printf("Error opening file %s\n", argv[i]);
-            continue;
-        }
+    while ((c = fgetc(f)) != EOF) {
+        if (c == '\n') lines++;
+        if (is_whitespace(c) && !is_whitespace(prev)) words++;
+        prev = c;
+    }
+    if (!is_whitespace(prev)) words++; 
 
-        printf("File: %s\n", argv[i]);
+    fclose(f);
 
-        while (fgets(buffer, sizeof(buffer), f) != NULL) {
-            printf("%s", buffer);
-        }
+    printf("Filename: %s\nSize (bytes): %ld\nLines: %d\nWords: %d\n\n",
+           filename, size, lines, words);
+}
 
-        fclose(f);
-        printf("\n");  
+int main(int argc, char *argv[]) {
+    if (argc < 2) { 
+        printf("Usage: %s <files...>\n", argv[0]); 
+        return 1; 
+    }
+
+    for (int i = 1; i < argc; i++) {
+        filestat(argv[i]);
     }
 
     return 0;
