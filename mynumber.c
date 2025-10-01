@@ -41,3 +41,7 @@ void convert_to_base(int number, int base) {
     }
     putchar('\n');
 }
+
+int is_valid_base(int base) {
+    return base == 2 || base == 8 || base == 10 || base == 16;
+}
