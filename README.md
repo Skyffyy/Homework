@@ -78,8 +78,6 @@ Parses flags with optional values and filenames.
 **Purpose:**  
 Parses flags and filenames in any order, rejects unknown flags.
 
-![Rask 5.3](images/5.3)
-
 ---
 
 ## Task 5.4: Configuration Override  
