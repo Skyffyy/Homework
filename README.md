@@ -6,7 +6,7 @@
 **Purpose:**  
 Performs arithmetic operations on two integers with a specified operator.
 
-![Rask 3.1](images/Screenshot\ from\ 2025-10-01\ 15-05-35.png)
+![Rask 3.1](images/3.1)
 
 ---
 
@@ -14,14 +14,15 @@ Performs arithmetic operations on two integers with a specified operator.
 **Purpose:**  
 Sums multiple integer arguments, ignoring invalid inputs.
 
-![Rask 3.2](images/Screenshot\ from\ 2025-10-01\ 15-11-23.png)
+![Rask 3.1](images/3.2)
+
 ---
 
 ## Task 3.3: Number Statistics  
 **Purpose:**  
 Calculates sum, average, minimum, maximum, and count of valid integers.
 
-![Rask 3.3](images/Screenshot\ from\ 2025-10-01\ 15-12-45.png)
+![Rask 3.3](images/3.3)
 
 ---
 
@@ -29,7 +30,7 @@ Calculates sum, average, minimum, maximum, and count of valid integers.
 **Purpose:**  
 Converts a number from one base to another among bases 2, 8, 10, and 16.
 
-![Rask 3.4](images/Screenshot\ from\ 2025-10-01\ 15-14-58.png)
+![Rask 3.4](images/3.4)
 
 ---
 
@@ -37,7 +38,7 @@ Converts a number from one base to another among bases 2, 8, 10, and 16.
 **Purpose:**  
 Prints length of each input string and total character count.
 
-![Rask 4.1](images/Screenshot\ from\ 2025-10-01\ 15-17-09.png)
+![Rask 4.1](images/4.1)
 
 ---
 
@@ -45,7 +46,7 @@ Prints length of each input string and total character count.
 **Purpose:**  
 Applies an operation (upper, lower, reverse, concat) on input strings.
 
-![Rask 4.2](images/Screenshot\ from\ 2025-10-01\ 15-17-09.png)
+![Rask 4.2](images/4.2)
 
 ---
 
@@ -53,7 +54,7 @@ Applies an operation (upper, lower, reverse, concat) on input strings.
 **Purpose:**  
 Case-insensitive search for a word in multiple text arguments.
 
-![Rask 4.3](images/Screenshot\ from\ 2025-10-01\ 15-17-56.png)
+![Rask 4.3](images/4.3)
 
 ---
 
@@ -61,7 +62,7 @@ Case-insensitive search for a word in multiple text arguments.
 **Purpose:**  
 Parses flags for verbose or help mode and processes filenames.
 
-![Rask 5.1](images/Screenshot\ from\ 2025-10-01\ 15-18-52.png)
+![Rask 5.1](images/5.1)
 
 ---
 
@@ -69,7 +70,7 @@ Parses flags for verbose or help mode and processes filenames.
 **Purpose:**  
 Parses flags with optional values and filenames.
 
-![Rask 5.2](images/Screenshot\ from\ 2025-10-01\ 15-21-26.png)
+![Rask 5.2](images/5.2)
 
 ---
 
@@ -77,7 +78,7 @@ Parses flags with optional values and filenames.
 **Purpose:**  
 Parses flags and filenames in any order, rejects unknown flags.
 
-![Rask 5.3](images/Screenshot\ from\ 2025-10-01\ 15-22-12.png)
+![Rask 5.3](images/5.3)
 
 ---
 
